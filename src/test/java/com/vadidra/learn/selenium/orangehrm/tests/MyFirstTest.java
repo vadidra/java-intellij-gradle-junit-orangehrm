@@ -1,17 +1,17 @@
-package com.vadidra.learn.selenium;
+package com.vadidra.learn.selenium.orangehrm.tests;
 
 import static org.junit.Assert.*;
 
         import org.junit.After;
         import org.junit.Before;
         import org.junit.Test;
+        import junit.framework.Assert;
+
         import org.openqa.selenium.By;
         import org.openqa.selenium.WebDriver;
         import org.openqa.selenium.WebElement;
         import org.openqa.selenium.chrome.ChromeDriver;
         import org.openqa.selenium.support.ui.WebDriverWait;
-
-        import junit.framework.Assert;
 
         import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
