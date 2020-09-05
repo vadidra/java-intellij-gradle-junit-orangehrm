@@ -21,12 +21,7 @@ public class LoginPage extends BasicPage {
     @Override
     public boolean isAt() throws Exception{
         String title = this.driver.getTitle();
-        boolean isAt = title.equals("OrangeHRM");
-        System.out.println("LoginPage, isAt starting");
-        System.out.println("title " + title);
-        System.out.println("isAt " + isAt);
-        System.out.println("LoginPage, isAt ending");
-        return isAt;
+        return title.equals("OrangeHRM");
     }
 
     public void login(String user, String pwd) throws Exception{
