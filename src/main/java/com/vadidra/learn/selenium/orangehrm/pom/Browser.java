@@ -30,8 +30,6 @@ public abstract class Browser {
         }
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         return driver;
     }
 
