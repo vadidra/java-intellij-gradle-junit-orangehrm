@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 
 public class TestLoginPage {
 
@@ -20,7 +22,7 @@ public class TestLoginPage {
     public void setUp(){
 
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver,20);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     @After
@@ -41,7 +43,7 @@ public class TestLoginPage {
 
             loginPage = new LoginPage(driver, wait);
             loginPage.navigateTo();
-            loginPage.login("Admin", "admin123");
+            loginPage.login();
             Assert.assertTrue(loginPage.isAt());
 
         }
