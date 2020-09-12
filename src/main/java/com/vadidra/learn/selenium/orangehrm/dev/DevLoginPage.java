@@ -21,9 +21,8 @@ public class DevLoginPage {
         try {
 
             driver = new ChromeDriver();
-            wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-            loginPage = new LoginPage(driver, wait);
+            loginPage = new LoginPage(driver);
             loginPage.navigateTo();
             loginPage.login();
 

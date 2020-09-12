@@ -12,8 +12,9 @@ public class LoginPage extends BasePage {
     public static final String ADMIN_PWD = "admin123";
     public static final String TITLE = "OrangeHRM";
 
-    public LoginPage(WebDriver driver, WebDriverWait wait) {
-        super(driver, wait);
+    public LoginPage(WebDriver driver) {
+
+        super(driver);
     }
 
     public void navigateTo() throws Exception {

@@ -1,4 +1,4 @@
-package com.vadidra.learn.selenium.orangehrm.tests;
+package com.vadidra.learn.selenium.orangehrm;
 
 import com.vadidra.learn.selenium.orangehrm.pom.LoginPage;
 import junit.framework.Assert;
@@ -8,9 +8,6 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-
 
 public class TestLoginPage {
 
@@ -22,7 +19,6 @@ public class TestLoginPage {
     public void setUp(){
 
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     @After
@@ -41,7 +37,7 @@ public class TestLoginPage {
         try {
 
 
-            loginPage = new LoginPage(driver, wait);
+            loginPage = new LoginPage(driver);
             loginPage.navigateTo();
             loginPage.login();
             Assert.assertTrue(loginPage.isAt());
