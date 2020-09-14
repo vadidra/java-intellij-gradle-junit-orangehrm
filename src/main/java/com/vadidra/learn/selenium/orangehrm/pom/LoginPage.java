@@ -2,7 +2,6 @@ package com.vadidra.learn.selenium.orangehrm.pom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
@@ -13,7 +12,6 @@ public class LoginPage extends BasePage {
     public static final String TITLE = "OrangeHRM";
 
     public LoginPage(WebDriver driver) {
-
         super(driver);
     }
 
@@ -27,15 +25,21 @@ public class LoginPage extends BasePage {
         return title.equals(TITLE);
     }
 
-    public void login() throws Exception{
-
+    public void loginWithValidCredentials() throws Exception{
             driver.findElement(By.id("txtUsername")).clear();
             driver.findElement(By.id("txtUsername")).sendKeys(ADMIN_USER_NAME);
             driver.findElement(By.id("txtPassword")).clear();
             driver.findElement(By.id("txtPassword")).sendKeys(ADMIN_PWD);
             driver.findElement(By.id("btnLogin")).click();
             wait.until(titleIs(TITLE));
+    }
 
+    public void loginWithInvalidCredentials() throws Exception{
+        driver.findElement(By.id("txtUsername")).clear();
+        driver.findElement(By.id("txtUsername")).sendKeys("test");
+        driver.findElement(By.id("txtPassword")).clear();
+        driver.findElement(By.id("txtPassword")).sendKeys("***");
+        driver.findElement(By.id("btnLogin")).click();
     }
 
 

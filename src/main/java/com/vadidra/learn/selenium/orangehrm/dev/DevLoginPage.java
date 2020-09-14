@@ -19,7 +19,7 @@ public class DevLoginPage {
 
             loginPage = new LoginPage(driver);
             loginPage.navigateTo();
-            loginPage.login();
+            loginPage.loginWithValidCredentials();
 
             if (loginPage.isAt()) {
                 System.out.println("Logged in");
